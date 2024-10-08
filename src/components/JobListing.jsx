@@ -5,7 +5,7 @@ const JobListing = ({job}) => {
 const  [FulljobDescription, setFulljobDescription] = useState(false);
 
 let description = job.description;
-console.log(job.description)
+
 
 if (!FulljobDescription) {
   description = description.substring(0, 90) + '...';

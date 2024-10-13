@@ -1,8 +1,11 @@
-import React from 'react'
+
+import JobListings from '../components/JobListings'
 
 const JobPages = () => {
   return (
-    <div>JobPages</div>
+   <>
+   <JobListings/>
+   </>
   )
 }
 

@@ -8,6 +8,7 @@ import {
 import HomePage from './pages/HomePage';
 import MainLayout from './layout/MainLayout';
 import JobPages from './pages/JobPages';
+import NotFound from './pages/NotFound';
 
 
 const router = createBrowserRouter(
@@ -15,6 +16,7 @@ const router = createBrowserRouter(
     <Route path='/' element ={<MainLayout />} >
 <Route index element ={<HomePage />} />
 <Route path ='/jobs' element ={<JobPages />} />
+<Route path ='*' element ={<NotFound />} />
       </Route>
 )
   );

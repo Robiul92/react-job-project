@@ -1,4 +1,3 @@
-
 import JobListings from '../components/JobListings'
 
 const JobPages = () => {

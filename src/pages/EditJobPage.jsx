@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import { useLoaderData, useNavigate } from 'react-router-dom';
+import {  useParams, useLoaderData, useNavigate } from 'react-router-dom';
 
-const EditJobPage = () => {
+const EditJobPage = ({updateJobSubmit}) => {
     const job = useLoaderData()
     const [title, setTitle] = useState(job.title);
     const [type, setType] = useState(job.type);
@@ -14,11 +14,28 @@ const EditJobPage = () => {
     const [contactPhone, setContactPhone] = useState(job.company.contactPhone);
   
     const navigate = useNavigate();
+    const {id} = useParams()
 
     const submitFrom = (e) =>{
         e.preventDefault();
 
-        console.log(e)
+        const upDateJob = {
+            id,
+            title,
+            type,
+            location,
+            description,
+            salary,
+            company: {
+              name: companyName,
+              description: companyDescription,
+              contactEmail,
+              contactPhone,
+            },
+          };
+          updateJobSubmit(upDateJob);
+      
+          return navigate(`/jobs/${id}`);
     }
 
   return (
